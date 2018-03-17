@@ -1,24 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2B5-7r-Ba0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="RFb-NU-eJB">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="ViewController" id="2B5-7r-Ba0" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bYt-4c-Pa3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Game State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csM-pb-0Dw">
+                                <rect key="frame" x="63" y="20" width="249.5" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOc-1C-pSb" userLabel="helperView">
+                                <rect key="frame" x="0.0" y="136" width="375" height="394"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="grid" translatesAutoresizingMaskIntoConstraints="NO" id="ZMF-5G-PI9">
+                                <rect key="frame" x="0.0" y="136" width="375" height="394"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="v9F-4z-Q92">
+                                <rect key="frame" x="12" y="166" width="350" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4A-V0-sji" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="90"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ButtonLeftTop"/>
+                                        <state key="normal" backgroundImage="empty"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="column" value="left"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="row" value="top"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="2B5-7r-Ba0" eventType="touchUpInside" id="SqP-N2-7D2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epF-d7-MKm" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="126" y="0.0" width="98" height="90"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ButtonCenterTop"/>
+                                        <state key="normal" backgroundImage="empty"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="column" value="center"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="row" value="top"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="2B5-7r-Ba0" eventType="touchUpInside" id="HR0-Wj-GI4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzV-9m-DCp" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="252" y="0.0" width="98" height="90"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ButtonRightTop"/>
+                                        <state key="normal" backgroundImage="empty"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="column" value="right"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="row" value="top"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="2B5-7r-Ba0" eventType="touchUpInside" id="fLe-95-WuB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="m7m-Uk-1Bp">
+                                <rect key="frame" x="12.5" y="288.5" width="350" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYU-rR-GaI" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="90"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ButtonLeftMiddle"/>
+                                        <state key="normal" backgroundImage="empty"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="column" value="left"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="row" value="middle"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="2B5-7r-Ba0" eventType="touchUpInside" id="stR-KT-IGm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeB-sM-nSL" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="126" y="0.0" width="98" height="90"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ButtonCenterMiddle"/>
+                                        <state key="normal" backgroundImage="empty"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="column" value="center"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="row" value="middle"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="2B5-7r-Ba0" eventType="touchUpInside" id="GKd-B4-ejI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7W-x3-wKH" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="252" y="0.0" width="98" height="90"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ButtonRightMiddle"/>
+                                        <state key="normal" backgroundImage="empty"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="column" value="right"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="row" value="middle"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="2B5-7r-Ba0" eventType="touchUpInside" id="Kaa-tb-4R3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="SEA-3D-PcX">
+                                <rect key="frame" x="12" y="421" width="350" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m37-lO-MsR" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="90"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ButtonLeftBottom"/>
+                                        <state key="normal" backgroundImage="empty"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="column" value="left"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="row" value="bottom"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="2B5-7r-Ba0" eventType="touchUpInside" id="UaN-aC-FSw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-Kf-8MK" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="126" y="0.0" width="98" height="90"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ButtonCenterButtom"/>
+                                        <state key="normal" backgroundImage="empty"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="column" value="center"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="row" value="bottom"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="2B5-7r-Ba0" eventType="touchUpInside" id="jwo-s5-hfb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzx-go-sgD" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="252" y="0.0" width="98" height="90"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ButtonRightBottom"/>
+                                        <state key="normal" backgroundImage="empty"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="column" value="right"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="row" value="bottom"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="2B5-7r-Ba0" eventType="touchUpInside" id="VtL-bY-pxm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTk-xE-nPO">
+                                <rect key="frame" x="122" y="580" width="130" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Start again!">
+                                    <color key="titleColor" red="0.050031404962972301" green="0.040937213817840462" blue="0.15371455774870468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="retartGame" destination="2B5-7r-Ba0" eventType="touchUpInside" id="fD5-XO-MAI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SEA-3D-PcX" firstAttribute="top" secondItem="m7m-Uk-1Bp" secondAttribute="bottom" constant="43" id="1O1-gL-knN"/>
+                            <constraint firstItem="owg-2S-n7Y" firstAttribute="trailing" secondItem="yTk-xE-nPO" secondAttribute="trailing" constant="123" id="3D4-91-30i"/>
+                            <constraint firstItem="ZMF-5G-PI9" firstAttribute="trailing" secondItem="owg-2S-n7Y" secondAttribute="trailing" id="9Qc-Y4-4pd"/>
+                            <constraint firstItem="owg-2S-n7Y" firstAttribute="bottom" secondItem="yTk-xE-nPO" secondAttribute="bottom" constant="51" id="9sR-Xs-Cno"/>
+                            <constraint firstItem="EOc-1C-pSb" firstAttribute="top" secondItem="csM-pb-0Dw" secondAttribute="bottom" constant="44" id="B0n-f4-jxG"/>
+                            <constraint firstItem="csM-pb-0Dw" firstAttribute="top" secondItem="owg-2S-n7Y" secondAttribute="top" constant="20" id="BKT-7F-tWh"/>
+                            <constraint firstItem="EOc-1C-pSb" firstAttribute="leading" secondItem="owg-2S-n7Y" secondAttribute="leading" id="IEY-YJ-acH"/>
+                            <constraint firstItem="csM-pb-0Dw" firstAttribute="centerX" secondItem="bYt-4c-Pa3" secondAttribute="centerX" id="JQk-2A-97x"/>
+                            <constraint firstItem="EOc-1C-pSb" firstAttribute="trailing" secondItem="owg-2S-n7Y" secondAttribute="trailing" id="JQy-he-vmo"/>
+                            <constraint firstItem="ZMF-5G-PI9" firstAttribute="top" secondItem="csM-pb-0Dw" secondAttribute="bottom" constant="44" id="K5Y-cX-2I3"/>
+                            <constraint firstItem="SEA-3D-PcX" firstAttribute="leading" secondItem="owg-2S-n7Y" secondAttribute="leading" constant="12" id="Lh9-kr-k6f"/>
+                            <constraint firstItem="m7m-Uk-1Bp" firstAttribute="centerX" secondItem="bYt-4c-Pa3" secondAttribute="centerX" id="U2L-7s-K3C"/>
+                            <constraint firstItem="yTk-xE-nPO" firstAttribute="top" secondItem="EOc-1C-pSb" secondAttribute="bottom" constant="50" id="U4Q-9J-Ar1"/>
+                            <constraint firstItem="owg-2S-n7Y" firstAttribute="bottom" secondItem="EOc-1C-pSb" secondAttribute="bottom" constant="137" id="XKv-VL-wsA"/>
+                            <constraint firstItem="yTk-xE-nPO" firstAttribute="leading" secondItem="owg-2S-n7Y" secondAttribute="leading" constant="122" id="aK4-vI-Xxd"/>
+                            <constraint firstItem="owg-2S-n7Y" firstAttribute="trailing" secondItem="SEA-3D-PcX" secondAttribute="trailing" constant="13" id="acZ-GX-TPb"/>
+                            <constraint firstItem="m7m-Uk-1Bp" firstAttribute="top" secondItem="v9F-4z-Q92" secondAttribute="bottom" constant="33" id="axG-Ip-Bcm"/>
+                            <constraint firstItem="v9F-4z-Q92" firstAttribute="leading" secondItem="owg-2S-n7Y" secondAttribute="leading" constant="12" id="dfn-26-PEs"/>
+                            <constraint firstItem="owg-2S-n7Y" firstAttribute="bottom" secondItem="ZMF-5G-PI9" secondAttribute="bottom" constant="137" id="gRD-Ph-0fY"/>
+                            <constraint firstItem="ZMF-5G-PI9" firstAttribute="leading" secondItem="owg-2S-n7Y" secondAttribute="leading" id="gbp-4r-7u4"/>
+                            <constraint firstItem="m7m-Uk-1Bp" firstAttribute="centerY" secondItem="bYt-4c-Pa3" secondAttribute="centerY" id="gji-ZC-IIL"/>
+                            <constraint firstItem="owg-2S-n7Y" firstAttribute="trailing" secondItem="v9F-4z-Q92" secondAttribute="trailing" constant="13" id="wAW-Vc-nvI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="owg-2S-n7Y"/>
                     </view>
+                    <connections>
+                        <outlet property="gameStateLabel" destination="csM-pb-0Dw" id="5dQ-cM-XDr"/>
+                        <outlet property="gridImageView" destination="ZMF-5G-PI9" id="Wxe-KE-yeg"/>
+                        <outlet property="helperImageView" destination="EOc-1C-pSb" id="Rrv-jx-VeM"/>
+                        <outlet property="resetGameButton" destination="yTk-xE-nPO" id="afY-bV-Vrb"/>
+                        <outletCollection property="movesButtons" destination="m37-lO-MsR" collectionClass="NSMutableArray" id="x04-Nq-Lod"/>
+                        <outletCollection property="movesButtons" destination="ksL-Kf-8MK" collectionClass="NSMutableArray" id="gtT-oU-ZOm"/>
+                        <outletCollection property="movesButtons" destination="Gzx-go-sgD" collectionClass="NSMutableArray" id="GIj-k2-b6O"/>
+                        <outletCollection property="movesButtons" destination="aeB-sM-nSL" collectionClass="NSMutableArray" id="h6X-gC-Ub4"/>
+                        <outletCollection property="movesButtons" destination="g7W-x3-wKH" collectionClass="NSMutableArray" id="CyA-2e-GzR"/>
+                        <outletCollection property="movesButtons" destination="L4A-V0-sji" collectionClass="NSMutableArray" id="upg-hx-G8h"/>
+                        <outletCollection property="movesButtons" destination="epF-d7-MKm" collectionClass="NSMutableArray" id="3XV-QU-vGM"/>
+                        <outletCollection property="movesButtons" destination="bzV-9m-DCp" collectionClass="NSMutableArray" id="1gI-5F-gpU"/>
+                        <outletCollection property="movesButtons" destination="QYU-rR-GaI" collectionClass="NSMutableArray" id="Cfl-4R-LOD"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kAc-0p-xyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="332" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="empty" width="98" height="90"/>
+        <image name="grid" width="375" height="394"/>
+    </resources>
 </document>
